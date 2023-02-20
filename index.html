@@ -1,1 +1,148 @@
-<h1>这是为的外网</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的主页-功能计算器</title>
+    <style>
+        body{
+            
+            text-size-adjust: none;
+            color: rgb(46, 48, 48);
+            font-size: 12px;
+            font-family: "PingFang SC", "Lantinghei SC", STheiti, Verdana, 微软雅黑, 宋体, Geneva, sans-serif;
+            min-width: 1110px;
+            background: url(images/bg.jpg) 0px 0px repeat rgb(229, 230, 208);
+        }
+        img{
+            height: 50px;
+            width: 50px;
+        }
+
+        .quyu1{
+            font-size: medium;
+            font-family: 黑体;
+            
+            height: 50px;
+            width: 500px;
+            background-color: bisque;
+        }
+
+        .left{
+            float: left;
+            height: 280px;
+            width: 30%;
+            margin-top: 10px;
+            display: inline-block; /*设置块类元素为行内块*/
+            border-style: solid;
+            text-align: center;
+            color: blue;
+            font-size: medium;
+            
+        }
+        p{
+            text-align: left;
+        }
+        .putong{
+            font-size: small;
+        }
+       
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- <div class="pic">
+        <img src="https://picnew9.photophoto.cn/20150614/keaixiaohuangyatupian-07832041_1.jpg">
+
+    </div> -->
+    <div class="quyu1">
+        <h1>我的地盘-功能计算器{{mess3}}</h1>
+        
+    </div>
+
+    <div class="left">ASTM A53 GR.B 计算水压
+        <hr>
+        <form action="." method="post">
+            <p class="putong">
+                外径(mm): <input type="text" name="waijing"><br />
+                壁厚(mm): <input type="text" name="thickness"><br />
+                <input type="submit" value="A53计算" name="A53计算" >
+    
+            </p>
+        </form>
+        <hr>
+        <p class="putong">外径是{{w}}mm,壁厚是{{t}}mm,A53水压值是{{ mpa }}MPa</p>
+        <hr>
+        <p class="putong">提示信息：{{mess1}}</p>
+    </div>
+    <div class="left">API 5L计算水压 
+        <hr>
+        <form action="." method="post">
+            <p class="putong">
+                外径(mm): <input type="text" name="waijing5l"><br />
+                壁厚(mm): <input type="text" name="thickness5l"><br />
+                最小屈服强度(MPa): <input type="text" name="minqufu5l"><br />
+                <input type="submit" value="API_5L计算" name="API_5L计算" title="计算前输入准确钢级对应的最小屈服强度/
+                L245/B=240
+                L290/X42=290
+                L320/X46=320
+                L360/X52=360
+                L390/X56=390
+                L415/X60=415
+                L450/X65=450
+                L485/X70=485"
+                <hr>
+            </p>
+        </form>
+        <p class="putong">外径是{{w5l}}mm,壁厚是{{t5l}}mm,最小屈服是{{min5l}}MPa,水压值是{{mpa5l}}MPa</p>
+        <hr>
+        <p class="putong">提示信息：{{mess2}}</p>
+        <hr>
+    </div>
+
+    <div class="left">API 5CT 计算水压
+        <hr>
+        <p>123</p>
+
+    </div>
+
+    <div class="left">钢管理论重量计算
+        <hr>
+        <form action="." method="post">
+            <p class="putong">
+                外径(mm): <input type="text" name="waijing_zh"><br />
+                壁厚(mm): <input type="text" name="thickness_zh"><br />
+                长度(mm): <input type="text" name="long"><br />
+                支数(PSC): <input type="text" name="num"><br />
+                <input type="submit" value="计算重量" name="计算重量" title="计算重量">
+
+            </p>
+        </form>
+        <hr>
+        <p class="putong">外径是{{w_zh}}mm;壁厚是{{t_zh}}mm;长度是{{l}}mm ;支数是{{num}}支;重量是{{weight1}}吨,或{{weight2}}KG</p>
+        <hr>
+        <p class="putong" >提示信息：{{mess5}}</p>
+
+
+    </div>
+
+    <div class="left">码单管号处理
+        <hr>
+        <table>
+            <p>
+                <input type="text" name="path"> <br />
+                <input type="button" value="选择"> <br />
+
+
+            </p>
+           
+        </table>
+        <p> sss</p>
+
+    </div>
+    
+
+    
+</body>

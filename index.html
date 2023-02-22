@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>我的主页-功能计算器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <meta charset="UTF-8"> -->
+    <title>我的地盘；我的万能计算器！</title>
     <style>
         body{
             
@@ -13,136 +14,125 @@
             min-width: 1110px;
             background: url(images/bg.jpg) 0px 0px repeat rgb(229, 230, 208);
         }
-        img{
-            height: 50px;
-            width: 50px;
-        }
-
-        .quyu1{
-            font-size: medium;
-            font-family: 黑体;
-            
-            height: 50px;
-            width: 500px;
-            background-color: bisque;
-        }
 
         .left{
             float: left;
-            height: 280px;
-            width: 30%;
+            height: 250px;
+            width: 25%;
             margin-top: 10px;
             display: inline-block; /*设置块类元素为行内块*/
             border-style: solid;
             text-align: center;
             color: blue;
-            font-size: medium;
+            font-size: 12px;
             
         }
         p{
             text-align: left;
         }
-        .putong{
-            font-size: small;
+        div :hover {
+            background-color: yellow;
+
         }
-       
+
+
+
+
+
+
+
     </style>
-
-
 
 </head>
 
 <body>
-    <!-- <div class="pic">
-        <img src="https://picnew9.photophoto.cn/20150614/keaixiaohuangyatupian-07832041_1.jpg">
+    <div class="left">
+        <p>外径(mm): <input type="text" id="w" value=""></p> 
+        <p>壁厚(mm): <input type="text" id="b" value=""></p> 
+        <hr/> 
+        <p><button onclick="A53()">计算ASTM A53水压值</button></p>
+        <p> <button onclick="qingkong()">清空数据</button> </p>
+        <p> 计算结果是:<span id="ss"></span></p>
 
-    </div> -->
-    <div class="quyu1">
-        <h1>我的地盘-功能计算器{{mess3}}</h1>
+    </div>
+
+    <div class="left">
+        <p>外径(mm): <input type="text" id="w" value=""></p> 
+        <p>壁厚(mm): <input type="text" id="b" value=""></p>
+        <P>选择钢级: <select>
+            <option selected="selected" value="245">L245/B(M)</option>
+            <option selected="selected" value="290">L290/X42(M)</option>
+            <option selected="selected" value="320">L320/X46(M)</option>
+            <option selected="selected" value="360">L360/X52(M)</option>
+            <option selected="selected" value="390">L390/X56(M)</option>
+            <option selected="selected" value="415">L415/X60(M)</option>
+            <option selected="selected" value="450">L450/X65(M)</option>
+            <option selected="selected" value="485">L485/X70(M)</option>
+         </select></P>  
+        <hr/>
+        <p><button onclick="api()">计算API 5L水压值</button></p>
+        <p> <button onclick="qingkong()">清空数据</button> </p>
+        <p> 计算结果是:<span id="api5l"></span></p>
+
+    </div>
+
+
+
         
-    </div>
-
-    <div class="left">ASTM A53 GR.B 计算水压
-        <hr>
-        <form action="." method="post">
-            <p class="putong">
-                外径(mm): <input type="text" name="waijing"><br />
-                壁厚(mm): <input type="text" name="thickness"><br />
-                <input type="submit" value="A53计算" name="A53计算" >
-    
-            </p>
-        </form>
-        <hr>
-        <p class="putong">外径是{{w}}mm,壁厚是{{t}}mm,A53水压值是{{ mpa }}MPa</p>
-        <hr>
-        <p class="putong">提示信息：{{mess1}}</p>
-    </div>
-    <div class="left">API 5L计算水压 
-        <hr>
-        <form action="." method="post">
-            <p class="putong">
-                外径(mm): <input type="text" name="waijing5l"><br />
-                壁厚(mm): <input type="text" name="thickness5l"><br />
-                最小屈服强度(MPa): <input type="text" name="minqufu5l"><br />
-                <input type="submit" value="API_5L计算" name="API_5L计算" title="计算前输入准确钢级对应的最小屈服强度/
-                L245/B=240
-                L290/X42=290
-                L320/X46=320
-                L360/X52=360
-                L390/X56=390
-                L415/X60=415
-                L450/X65=450
-                L485/X70=485"
-                <hr>
-            </p>
-        </form>
-        <p class="putong">外径是{{w5l}}mm,壁厚是{{t5l}}mm,最小屈服是{{min5l}}MPa,水压值是{{mpa5l}}MPa</p>
-        <hr>
-        <p class="putong">提示信息：{{mess2}}</p>
-        <hr>
-    </div>
-
-    <div class="left">API 5CT 计算水压
-        <hr>
-        <p>123</p>
-
-    </div>
-
-    <div class="left">钢管理论重量计算
-        <hr>
-        <form action="." method="post">
-            <p class="putong">
-                外径(mm): <input type="text" name="waijing_zh"><br />
-                壁厚(mm): <input type="text" name="thickness_zh"><br />
-                长度(mm): <input type="text" name="long"><br />
-                支数(PSC): <input type="text" name="num"><br />
-                <input type="submit" value="计算重量" name="计算重量" title="计算重量">
-
-            </p>
-        </form>
-        <hr>
-        <p class="putong">外径是{{w_zh}}mm;壁厚是{{t_zh}}mm;长度是{{l}}mm ;支数是{{num}}支;重量是{{weight1}}吨,或{{weight2}}KG</p>
-        <hr>
-        <p class="putong" >提示信息：{{mess5}}</p>
+    <script>
+       
+        function A53() {
+            var waijing=document.getElementById('w').value
+            console.log(waijing)
+            var bihou=document.getElementById('b').value
+            console.log(bihou)
+            var s=2*240*Number(bihou)/Number(waijing)*0.6
+            console.log(s)
+            s2=Math.ceil(s*10)/10
+            if (Number(waijing)<=88.9){
+                if (s2<17.2){
+                    document.getElementById("ss").innerHTML='外径是'+waijing+','+'壁厚是'+bihou+','+'水压是'+ s2+'MPa';
+                    
+                }
+                else {
+                    document.getElementById("ss").innerHTML='外径是'+waijing+','+'壁厚是'+bihou+','+'水压是'+17.2+'MPa';
+                }
+       
+            }
+            else {
+                if (Number(waijing)>88.9){
+                    if (s2<19.3){
+                        document.getElementById("ss").innerHTML='外径是'+waijing+','+'壁厚是'+bihou+','+'水压是'+s2+'MPa'; 
+                    }
+                    else {
+                        document.getElementById("ss").innerHTML='外径是'+waijing+','+'壁厚是'+bihou+','+'水压是'+19.3+'MPa';
+                    }
+                }
+            }
 
 
-    </div>
+            // document.getElementById("ss").innerHTML=s2;
+            
+            
+        }
+        
+        function qingkong() {
+            document.getElementById("ss").innerHTML="";
+            document.getElementById('w').value="";
+            document.getElementById('b').value="";
 
-    <div class="left">码单管号处理
-        <hr>
-        <table>
-            <p>
-                <input type="text" name="path"> <br />
-                <input type="button" value="选择"> <br />
+        }
+
+        function api(){
+            document.getElementById("api5l").innerHTML="开发中";
+            
+        }
 
 
-            </p>
-           
-        </table>
-        <p> sss</p>
 
-    </div>
-    
 
-    
+
+
+    </script>
 </body>
+</html>

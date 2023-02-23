@@ -51,15 +51,15 @@
         <p>壁厚(mm): <input type="text" id="b" value=""></p> 
         <hr/> 
         <p><button onclick="A53()">计算ASTM A53水压值</button></p>
-        <p> <button onclick="qingkong()">清空数据</button> </p>
+        <p><button onclick="qingkong()">清空数据</button> </p>
         <p> 计算结果是:<span id="ss"></span></p>
 
     </div>
 
     <div class="left">
-        <p>外径(mm): <input type="text" id="w" value=""></p> 
-        <p>壁厚(mm): <input type="text" id="b" value=""></p>
-        <P>选择钢级: <select>
+        <p>外径(mm): <input type="text" id="w5l" value=""></p> 
+        <p>壁厚(mm): <input type="text" id="b5l" value=""></p>
+        <P>选择钢级: <select name="type" id="usertype">
             <option selected="selected" value="245">L245/B(M)</option>
             <option selected="selected" value="290">L290/X42(M)</option>
             <option selected="selected" value="320">L320/X46(M)</option>
@@ -70,9 +70,17 @@
             <option selected="selected" value="485">L485/X70(M)</option>
          </select></P>  
         <hr/>
-        <p><button onclick="api()">计算API 5L水压值</button></p>
-        <p> <button onclick="qingkong()">清空数据</button> </p>
+        <p>
+            <p><button onclick="api5l()">计算5L水压值</button></p>
+            
+            
+            <!-- <input type="button" value="API5L计算" onclick="pi5l();"/> -->
+            <!-- <button onclick="dosave();"/> ">计算5L水压值</button>  -->
+        </p>
+    
+        <p> <button onclick="qingkong2()">清空数据</button> </p>
         <p> 计算结果是:<span id="api5l"></span></p>
+       
 
     </div>
 
@@ -80,6 +88,7 @@
 
         
     <script>
+        var dosave;
        
         function A53() {
             var waijing=document.getElementById('w').value
@@ -123,10 +132,90 @@
 
         }
 
-        function api(){
-            document.getElementById("api5l").innerHTML="开发中";
+        function xishu(){
+            var myType=document.getElementById('usertype');
+            var index=myType.selectedIndex;
+            var op1=Number(myType.options[index].value) ;
+            // var op2=myType.options[index].text;
+            // console.log(op1);
+            // console.log(typeof(op1))
+            // console.log(op2)
+            var waijing=Number(document.getElementById('w5l').value) ;
+
+            if (op1==245){
+                return 0.6
+            }
+            else {
+                if (waijing<=141.3){
+                    return 0.6
+                }
+                else {
+                    if (141.3<waijing<=219.1){
+                        return 0.75
+                    }
+                    else {
+                        if (219.1<waijing<508){
+                            return 0.85
+                        }
+                        else {return 0.9}
+                    }
+                }
+            }
+
+         
+
+
+
+            // if (op1=245){
+            //     console.log('----1')
+            //     return 0.6
+            // }
+            // else {if (waijing<=141.3){
+            //     console.log('----2')
+            //     return 0.6
+            // }
+            // else if (141.3<waijing<=219.1){
+            //     return 0.75
+            // }
+            // else if (219.1<waijing<508){
+            //     return 0.85
+            // }
+            // else {return 0.9}}
             
+            
+                
+            }
+
+        function api5l() {
+            var myType=document.getElementById('usertype');
+            var index=myType.selectedIndex;
+            var op1=Number(myType.options[index].value) ;
+            // var op2=myType.options[index].text;
+            console.log(op1);
+            // console.log(typeof(op1))
+            // console.log(op2)
+
+            var waijing=Number(document.getElementById('w5l').value) ;
+            console.log(waijing)
+            var bihou=Number(document.getElementById('b5l').value) ;
+            console.log(bihou)
+            
+            a=xishu()
+            console.log(typeof(a))
+            console.log('系数是'+a)
+
+
+            
+            var p=2*op1*Number(bihou)/Number(waijing)*xishu()
+            console.log(p)
+
+            document.getElementById("api5l").innerHTML="开发中";
+
+
         }
+            
+
+
 
 
 

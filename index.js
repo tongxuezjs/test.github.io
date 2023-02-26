@@ -116,6 +116,5 @@ function api5l() {
 function qingchu() {
     document.getElementById('w5l').value="";
     document.getElementById('b5l').value="";
-    document.getElementById("api5l").innerHTML="";
-   
+    document.getElementById("api5l").innerHTML="";  
 }

@@ -1,0 +1,29 @@
+body{
+            
+    text-size-adjust: none;
+    color: rgb(46, 48, 48);
+    font-size: 12px;
+    font-family: "PingFang SC", "Lantinghei SC", STheiti, Verdana, 微软雅黑, 宋体, Geneva, sans-serif;
+    min-width: 1110px;
+    background: url(images/bg.jpg) 0px 0px repeat rgb(229, 230, 208);
+}
+
+.left{
+    float: left;
+    height: 250px;
+    width: 25%;
+    margin-top: 10px;
+    display: inline-block; /*设置块类元素为行内块*/
+    border-style: solid;
+    text-align: center;
+    color: blue;
+    font-size: 12px;
+    
+}
+p{
+    text-align: left;
+}
+div :hover {
+    background-color: yellow;
+
+}

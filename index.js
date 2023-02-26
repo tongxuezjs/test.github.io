@@ -112,3 +112,10 @@ function api5l() {
 
 // 下面的是函数的括号  
 }
+
+function qingchu() {
+    document.getElementById('w5l').value="";
+    document.getElementById('b5l').value="";
+    document.getElementById("api5l").innerHTML="";
+   
+}

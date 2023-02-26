@@ -1,4 +1,4 @@
-body{
+/* body{
             
     text-size-adjust: none;
     color: rgb(46, 48, 48);
@@ -6,7 +6,7 @@ body{
     font-family: "PingFang SC", "Lantinghei SC", STheiti, Verdana, 微软雅黑, 宋体, Geneva, sans-serif;
     min-width: 1110px;
     background: url(images/bg.jpg) 0px 0px repeat rgb(229, 230, 208);
-}
+} */
 
 .left{
     float: left;
@@ -18,12 +18,59 @@ body{
     text-align: center;
     color: blue;
     font-size: 12px;
+    hev
     
 }
+
+
 p{
     text-align: left;
 }
-div :hover {
+/* div :hover {
     background-color: yellow;
+
+} */
+
+.page{
+    position: relative;
+    /* width: auto; */
+    /* height: 5522px; */
+    max-width: 1412px;
+    max-height: 5522px;
+    overflow: hidden;
+   
+}
+/* h5{
+    font-family: 华文彩云;
+    font-size: x-large;
+} */
+
+.top{
+    background-color: rgb(186, 186, 212);
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* background: #fff; */
+    border-bottom: #eee;
+    font-size: 50px;
+    font-family: 微软雅黑;
+}
+
+.zhengwen{
+    /* background-color: blue; */
+    width: auto;
+    height:800px;
+    vertical-align: baseline;
+    border: 1px solid #cd0b0b;
+}
+.z2{
+    height: 250px;
+    width: 25%;
+    margin-top: 10px;
+    display: inline-block; /*设置块类元素为行内块*/
+    border-style: solid;
+    text-align: center;
+    color: burlywood;
+    
 
 }

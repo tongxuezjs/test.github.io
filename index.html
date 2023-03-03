@@ -29,7 +29,7 @@
                 <p>外径(mm): <input type="text" id="w5l" value=""></p> 
                 <p>壁厚(mm): <input type="text" id="b5l" value=""></p>
                 <P>选择钢级: <select name="type" id="usertype">
-                    <option selected="selected" value="245">L245/B(M)</option>
+                    <option selected="selected" value="245" selected>L245/B(M)</option>
                     <option selected="selected" value="290">L290/X42(M)</option>
                     <option selected="selected" value="320">L320/X46(M)</option>
                     <option selected="selected" value="360">L360/X52(M)</option>
@@ -54,6 +54,21 @@
             <div class="left">
                 <img src="image/xishu.png" style="width: 300px; height:250px;"  alt="系数">
         
+            </div>
+
+            <div class="left2">
+
+                <p>外径(mm): <input type="text" id="w5w" value=""></p> 
+                <p>壁厚(mm): <input type="text" id="b5w" value=""></p>
+                <p>长度(mm):<input type="text" id="long" value=""></p>
+                <p>支数(mm):<input type="text" id="pcs" value=""></p>
+                <hr>
+                <button onclick="weight1()">计算重量</button>
+                <!-- <p><button onclick="weight()"> 计算重量</button></p> -->
+
+                <p> <button onclick="qingchu3()">清空数据</button> </p>
+                <p> 计算结果是:<span id="weight"></span></p>
+
             </div>
             
             

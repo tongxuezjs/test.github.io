@@ -118,3 +118,50 @@ function qingchu() {
     document.getElementById('b5l').value="";
     document.getElementById("api5l").innerHTML="";  
 }
+// 清除重量的参数
+function qingchu3() {
+    document.getElementById('w5w').value="";
+    document.getElementById('b5w').value="";
+    document.getElementById('long').value="";
+    document.getElementById('pcs').value="" ;
+    document.getElementById("weight").innerHTML="";  
+}
+
+// 计算重量
+
+function weight1() {
+    var outd=Number(document.getElementById('w5w').value);
+    console.log(outd)
+    var thickness=Number(document.getElementById('b5w').value) ;
+    var lo=Number(document.getElementById('long').value) ;
+    var pcs=Number(document.getElementById('pcs').value) ;
+
+    weight=(outd-thickness)*thickness*0.0246615*lo/1000*pcs
+    // 公斤
+    weight2=weight.toFixed(3)
+    // console.log(weight2)
+    // 吨
+    weight3=weight/1000
+
+    weight4=weight3.toFixed(3)
+
+
+    // console.log(weight4)
+
+
+    if (outd==0){
+        document.getElementById("weight").innerHTML="请输入信息"
+    }else{
+        document.getElementById("weight").innerHTML="外径是"+outd+";壁厚"+thickness+";长度"+lo+";支数"+pcs+";公斤重量是"+weight2+"KG"+";约"+weight4+"吨"
+
+
+    }
+    
+
+
+
+
+
+    
+}
+

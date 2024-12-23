@@ -165,3 +165,24 @@ function weight1() {
     
 }
 
+//计算断后伸长率
+function shenchanglv() {
+    var width=Number(document.getElementById('width').value);
+    var thickness_1=Number(document.getElementById('thickness1').value);
+    var usertype_1=document.getElementById('usertype1');
+    var index_1=usertype_1.selectedIndex;
+    var op_11=Number(usertype_1.options[index_1].value) ;
+
+
+    shenchanglv_value=1940*((width*thickness_1)**0.2)/((op_11)**0.9)
+    document.getElementById("shenchanglv1").innerHTML=""
+
+    document.getElementById("shenchanglv1").innerHTML="宽度是"+width+";公称壁厚"+thickness_1+";最小抗拉强度是"+op_11+"MPa;计算后的最小断后伸长率是"+shenchanglv_value.toFixed(2)+"%"
+
+}
+
+function qingchu4() {
+    document.getElementById('width').value="";
+    document.getElementById('thickness1').value="";
+    
+}

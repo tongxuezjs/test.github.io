@@ -186,3 +186,129 @@ function qingchu4() {
     document.getElementById('thickness1').value="";
     
 }
+
+function qingchu5ct() {
+    document.getElementById('w5ct').value="";
+    document.getElementById('b5ct').value="";
+    document.getElementById("shuiyaapi5ct").innerHTML=""; 
+    
+}
+
+
+function shuiyaapi5ctxishu() {
+    var outd=Number(document.getElementById('w5ct').value);
+    var mytype=document.getElementById('usertype5ct');
+    var index=mytype.selectedIndex;
+    var opp5ct=Number(mytype.options[index].value) ;
+
+    if (outd>244.48&&(opp5ct==276||opp5ct==379)){
+        return 0.6
+    }else {
+        return 0.8
+    }
+
+
+}
+
+
+function shuiyaapi5ctjisun() {
+    xishu5ct=shuiyaapi5ctxishu()
+    var outd=Number(document.getElementById('w5ct').value);
+    var thickness=Number(document.getElementById('b5ct').value) ;
+    var mytype=document.getElementById('usertype5ct');
+    var index=mytype.selectedIndex;
+    var opp5ct=Number(mytype.options[index].value) ;
+    console.log(xishu5ct)
+    console.log(outd)
+    console.log(thickness)
+    console.log(opp5ct)
+
+    var shuiya5ct_value=2*opp5ct*thickness/outd*xishu5ct
+    console.log(shuiya5ct_value)
+    var shuiya5ct_value2=Math.round(shuiya5ct_value * 2) / 2;
+    console.log(shuiya5ct_value2)
+    return shuiya5ct_value2
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function api5ct() {
+    var shuiya5ct_value=shuiyaapi5ctjisun()
+    if (shuiya5ct_value<69){
+        document.getElementById("shuiyaapi5ct").innerHTML="外径是"+document.getElementById('w5ct').value+";壁厚"+document.getElementById('b5ct').value+";系数是"+shuiyaapi5ctxishu()+";水压值是"+shuiya5ct_value+"MPa."; 
+    }else {
+        document.getElementById("shuiyaapi5ct").innerHTML="外径是"+document.getElementById('w5ct').value+";壁厚"+document.getElementById('b5ct').value+";系数是"+shuiyaapi5ctxishu()+";水压值是69.0MPa."; 
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function showTime(clock){
+
+    var now = new Date();
+    
+    var year = now.getFullYear();
+    
+    var month= now.getMonth();
+    
+    var day = now.getDate();
+    
+    var hour = now.getHours();
+    
+    var minu = now.getMinutes();
+    
+    var second = now.getSeconds();
+    
+    month = month+1;
+    
+    var arr_work = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+    
+    var week = arr_work[ now.getDay()];
+    
+    var time = year+"年"+month+"月"+day+"日 "+ week+" "+hour+":"+minu+":"+second;
+    
+    clock.innerHTML="当前时间: "+time;
+}
+    
+window.onload = function(){
+    
+    var clock = document.getElementById("clock");
+    
+    window.setInterval("showTime(clock)",1000);
+}

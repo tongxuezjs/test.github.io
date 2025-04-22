@@ -1,91 +1,122 @@
-/* body{
-            
-    text-size-adjust: none;
-    color: rgb(46, 48, 48);
+body{
+    margin: 0;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    background-color: #fff;
+    font-feature-settings: "tnum","tnum"
+    
+}
+.left {
+   
+    height: 280px;
+    margin-top: 0px;
+    display: inline-block; /* 设置块类元素为行内块 */
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 5px; /* 圆角半径为 10px */;
     font-size: 12px;
-    font-family: "PingFang SC", "Lantinghei SC", STheiti, Verdana, 微软雅黑, 宋体, Geneva, sans-serif;
-    min-width: 1110px;
-    background: url(images/bg.jpg) 0px 0px repeat rgb(229, 230, 208);
-} */
+}
 
-.left{
-    float: left;
+.zhengwen {
+    display: grid; /* 启用 Grid 布局 */
+    grid-template-columns: repeat(3, 1fr); /* 将容器划分为 3 列，每列宽度平均分配 */
+    gap: 1px; /* 设置网格项之间的间距 */
+}
+
+
+
+.z2 {
     height: 250px;
     width: 25%;
     margin-top: 10px;
-    display: inline-block; /*设置块类元素为行内块*/
+    display: inline-block; /* 设置块类元素为行内块 */
     border-style: solid;
     text-align: center;
-    color: blue;
-    font-size: 12px;
-    hev
-    
+    color: burlywood;
 }
-
-
-p{
+p {
     text-align: left;
+    margin-left: 10px;
 }
-/* div :hover {
-    background-color: yellow;
 
-} */
-
-.page{
-    background-color: #f3f3f4
+.page {
+    /* background-color: #f3f3f4; */
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
     position: relative;
-    /* width: auto; */
-    /* height: 5522px; */
-    max-width: 1412px;
-    max-height: 5522px;
-    overflow: hidden;
    
+    overflow: hidden;
 }
 /* h5{
     font-family: 华文彩云;
     font-size: x-large;
 } */
-
-.top{
-    background-color: rgb(186, 186, 212);
+.top {
+    background-color: rgb(135,206,235);
     display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    /* background: #fff; */
-    border-bottom: #eee;
-    font-size: 50px;
+    justify-content:  space-between;
+    border: 3px solid #e2e5e8; /* 修改边框宽度为 5px */
+    font-size: 30px;
     font-family: 微软雅黑;
-}
+    border-radius: 10px; /* 圆角半径为 10px */;
 
-.zhengwen{
-    /* background-color: blue; */
-    width: auto;
-    height:800px;
-    vertical-align: baseline;
-    border: 1px solid #cd0b0b;
 }
-.z2{
-    height: 250px;
-    width: 25%;
-    margin-top: 10px;
-    display: inline-block; /*设置块类元素为行内块*/
-    border-style: solid;
-    text-align: center;
-    color: burlywood;
+.top_left{
+    margin-left:500px;
     
+}
+.top_right{
+    font-size: 16px;
+    font-family: 微软雅黑;
+    margin-right: 10px;
+    text-align: center;
+    display: flex; /* 使用 flex 布局 */
+    align-items: center; /* 文字垂直居中 */
+    color: #111111; /* 设置文字颜色 */;
+    
+    
+}
+
+.shuru{
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: larger;
 
 }
 
-.left2{
-    float: left;
-    height: 300px;
-    width: 25%;
-    margin-top: 10px;
-    display: inline-block; /*设置块类元素为行内块*/
-    border-style: solid;
-    text-align: center;
-    color: blue;
-    font-size: 12px;
-    hev
+.annue{
+    margin-left: 10px;
+    display: flex; /* 使用 flex 布局 */;
+    gap: 10px;
     
+}
+
+.jielun{
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: larger;
+}
+id{
+    color: #111111;
+    font-size: 20px;
+}
+
+.note{
+    margin-left: 10px;
+    font-size: larger;
+
+}
+/* 定义闪烁动画 */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink-text {
+    animation: blink 5s infinite; /* 应用动画，1 秒一个周期，无限循环 */
 }

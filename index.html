@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- <meta charset="UTF-8"> -->
-    <title>我的地盘；我的万能计算器！</title>
+    <link rel="icon" href="https://s21.ax1x.com/2024/08/08/pkzGiy6.jpg" type="image/jpg">
+    <title>工具箱</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 
@@ -12,45 +13,72 @@
 <body>
 
     <div class="page">
-        <div class="top">我的地盘!我的万能计算器！</div>
+        <div class="top">
+            <div class="top_left">我的地盘!我的万能计算器！</div>
+            
+            <div class="top_right" id ="clock"></div>
+        </div>
+        
 
         <div class="zhengwen">
             <div class="left">
-                <p>外径(mm): <input type="text" id="w" value=""></p> 
-                <p>壁厚(mm): <input type="text" id="b" value=""></p> 
-                <hr/> 
-                <p><button onclick="A53()">计算ASTM A53水压值</button></p>
-                <p><button onclick="qingkong()">清空数据</button> </p>
-                <P>ASTM A53标准水压值推荐查表获取水压值</P>
+                <div class="shuru">
+                    <p>外径(mm): <input type="text" id="w" value=""></p> 
+                    <p>壁厚(mm): <input type="text" id="b" value=""></p> 
+                </div>
+                
+            
+                <div class="annue">
+                    <button onclick="A53()">计算ASTM A53 GR.B水压值</button>
+                    <button onclick="qingkong()">清空数据</button> 
+                </div> 
+
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="ss"></span></p>
+                </div>
+                <hr/>
+                <div class="note">
+                    <P class="blink-text">ASTM A53标准水压值优先查表获取水压值，当非标准尺寸时候使用上述计算公式</P>
+
+                </div>
+                
                
-                <p> 计算结果是:<span id="ss"></span></p>
+                
         
             </div>
 
             <div class="left">
-                <p>外径(mm): <input type="text" id="w5l" value=""></p> 
-                <p>壁厚(mm): <input type="text" id="b5l" value=""></p>
-                <P>选择钢级: <select name="type" id="usertype">
-                    <option value="245" >L245/B(M)</option>
-                    <option value="290" selected>L290/X42(M)</option>
-                    <option value="320">L320/X46(M)</option>
-                    <option value="360">L360/X52(M)</option>
-                    <option value="390">L390/X56(M)</option>
-                    <option value="415">L415/X60(M)</option>
-                    <option value="450">L450/X65(M)</option>
-                    <option value="485">L485/X70(M)</option>
-                    
-                 </select>
-                </P>  
-                <hr/>
-                <p>
-                    <p><button onclick="api5l()">计算5L水压值</button></p>
+                <div class="shuru">
+                    <p>外径(mm): <input type="text" id="w5l" value=""></p> 
+                    <p>壁厚(mm): <input type="text" id="b5l" value=""></p>
+                    <P>选择钢级: <select name="type" id="usertype">
+                        <option value="245" >L245/B(M)</option>
+                        <option value="290" selected>L290/X42(M)</option>
+                        <option value="320">L320/X46(M)</option>
+                        <option value="360">L360/X52(M)</option>
+                        <option value="390">L390/X56(M)</option>
+                        <option value="415">L415/X60(M)</option>
+                        <option value="450">L450/X65(M)</option>
+                        <option value="485">L485/X70(M)</option>
+                        
+                    </select>
+                    </P>  
+                </div>
+             
+                <div class="annue">
+                    <button onclick="api5l()">计算API 5L/GB/T9711水压值</button>
+                    <button onclick="qingchu()">清空数据</button>
                     <!-- <p><button onclick="api5l()" > 计算5L水压值</button></p> -->
                     
-                </p>
+                </div>
+
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="api5l"></span></p>
+
+                </div>
             
-                <p> <button onclick="qingchu()">清空数据</button> </p>
-                <p> 计算结果是:<span id="api5l"></span></p>
+                
+                
                
         
             </div>
@@ -60,26 +88,37 @@
         
             </div>
 
-            <div class="left2">
+            <div class="left">
 
-                <p>外径(mm): <input type="text" id="w5w" value=""></p> 
-                <p>壁厚(mm): <input type="text" id="b5w" value=""></p>
-                <p>长度(mm):<input type="text" id="long" value=""></p>
-                <p>支数(mm):<input type="text" id="pcs" value=""></p>
-                <hr>
-                <button onclick="weight1()">计算重量</button>
+                <DIV class="shuru">
+                    <p>外径(mm): <input type="text" id="w5w" value=""></p> 
+                    <p>壁厚(mm): <input type="text" id="b5w" value=""></p>
+                    <p>长度(mm):<input type="text" id="long" value=""></p>
+                    <p>支数(mm):<input type="text" id="pcs" value=""></p>
+
+                </DIV>
+                <div class="annue">
+                    <button onclick="weight1()">计算重量</button>
+                    <button onclick="qingchu3()">清空数据</button> 
                 <!-- <p><button onclick="weight()"> 计算重量</button></p> -->
 
-                <p> <button onclick="qingchu3()">清空数据</button> </p>
-                <p> 计算结果是:<span id="weight"></span></p>
+                </div>
 
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="weight"></span></p>
+
+                </div>
+
+             
             </div>
             <!-- 伸长率 -->
-            <div class="left2">
-                <p>API 5L 46TH/GB/T9711-2023 断后伸长率最低要求计算</p>
-                <p>试样宽度(mm): <input type="text" id="width" value="" placeholder="20/38.1等"></p> 
-                <p>公称壁厚(mm): <input type="text" id="thickness1" value="" placeholder="输入壁厚"></p>
-                <P>最小抗拉强度(MPa)选择钢级: <select name="type" id="usertype1">
+            <div class="left">
+
+                <div class="shuru">
+                    <p>API 5L 46TH/GB/T9711-2023 断后伸长率最低要求计算</p>
+                    <p>试样宽度(mm): <input type="text" id="width" value="" placeholder="20/38.1等"></p> 
+                    <p>公称壁厚(mm): <input type="text" id="thickness1" value="" placeholder="输入壁厚"></p>
+                    <P>最小抗拉强度(MPa)选择钢级: <select name="type" id="usertype1">
                     <option value="415" >L245/B(M)</option>
                     <option value="415" selected>L290/X42(M)</option>
                     <option value="435">L320/X46(M)</option>
@@ -88,17 +127,50 @@
                     <option value="520">L415/X60(M)</option>
                     <option value="535">L450/X65(M)</option>
                     <option value="570">L485/X70(M)</option>
-                </select>
-                </p>
-                <hr>
+                    </select>
+                    </p>
 
-                <button onclick="shenchanglv()">计算最小断后伸长率</button>
-                <p> <button onclick="qingchu4()">清空数据</button> </p>
-                <p> 计算结果是:<span id="shenchanglv1"></span></p>
+                </div>
 
+                <div class="annue">
+                    <button onclick="shenchanglv()">计算最小断后伸长率</button>
+                    <button onclick="qingchu4()">清空数据</button> 
+                </div>
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="shenchanglv1"></span></p>
+                </div>
+              
             </div>
             
-            
+            <div class="left ">
+                <div class="shuru">
+                    <p>外径(mm): <input type="text" id="w5ct" value=""></p> 
+                    <p>壁厚(mm): <input type="text" id="b5ct" value=""></p>
+                    <P>选择钢级: <select name="type" id="usertype5ct">
+                        <option value="276" >H40</option>
+                        <option value="379" selected>J55</option>
+                        <option value="379">K55</option>
+                       
+                        
+                    </select>
+                    </P>  
+
+                </div>
+                <div class="annue">
+                    <button onclick="api5ct()">API 5CT 水压值 </button>
+                    <button onclick="qingchu5ct()">清空数据</button>
+
+                </div>
+
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="shuiyaapi5ct"></span></p>
+
+                </div>
+                <div class="note">
+                    <p class="blink-text">水压值四舍五入到最近接的0.5MPa</p>
+                </div>
+
+            </div>
 
 
 
@@ -109,50 +181,10 @@
 
 
 
-            <!-- page的尾巴 -->
+           
     </div>
 
-    <!-- <div class="left">
-        <p>外径(mm): <input type="text" id="w" value=""></p> 
-        <p>壁厚(mm): <input type="text" id="b" value=""></p> 
-        <hr/> 
-        <p><button onclick="A53()">计算ASTM A53水压值</button></p>
-        <p><button onclick="qingkong()">清空数据</button> </p>
-        <p> 计算结果是:<span id="ss"></span></p>
-
-    </div>
-
-    <div class="left">
-        <p>外径(mm): <input type="text" id="w5l" value=""></p> 
-        <p>壁厚(mm): <input type="text" id="b5l" value=""></p>
-        <P>选择钢级: <select name="type" id="usertype">
-            <option selected="selected" value="245">L245/B(M)</option>
-            <option selected="selected" value="290">L290/X42(M)</option>
-            <option selected="selected" value="320">L320/X46(M)</option>
-            <option selected="selected" value="360">L360/X52(M)</option>
-            <option selected="selected" value="390">L390/X56(M)</option>
-            <option selected="selected" value="415">L415/X60(M)</option>
-            <option selected="selected" value="450">L450/X65(M)</option>
-            <option selected="selected" value="485">L485/X70(M)</option>
-         </select></P>  
-        <hr/>
-        <p>
-            <p><button onclick="api5l()">计算5L水压值</button></p>
-            <!-- <p><button onclick="api5l()" > 计算5L水压值</button></p> -->
-            
-        <!-- </p>
     
-        <p> <button onclick="qingchu()">清空数据</button> </p>
-        <p> 计算结果是:<span id="api5l"></span></p>
-       
-
-    </div>
-
-    <div class="left">
-        <img src="image/xishu.png" style="width: 300px; height:250px;"  alt="系数">
-
-    </div>
- --> 
 
 
 </body>

@@ -120,3 +120,18 @@ id{
 .blink-text {
     animation: blink 5s infinite; /* 应用动画，1 秒一个周期，无限循环 */
 }
+
+table {
+     /* width: 50%;设置表格宽度 */
+    border-collapse: collapse; /* 边框合并 */
+    margin: 1px 0; /* 外边距 */
+    font-size: 10px; /* 字体大小 */
+    text-align: left; /* 文本对齐方式 */
+}
+th, td {
+    border: 1px solid #ddd; /* 边框样式 */
+    padding: 4px; /* 内边距 */
+}
+th {
+    background-color: #f4f4f4; /* 表头背景颜色 */
+}

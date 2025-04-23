@@ -124,7 +124,10 @@ id{
 table {
      /* width: 50%;设置表格宽度 */
     border-collapse: collapse; /* 边框合并 */
-    margin: 1px 0; /* 外边距 */
+    margin-top: 1px;
+    margin-left: 10px;
+    
+    
     font-size: 10px; /* 字体大小 */
     text-align: left; /* 文本对齐方式 */
 }
@@ -135,3 +138,15 @@ th, td {
 th {
     background-color: #f4f4f4; /* 表头背景颜色 */
 }
+button{
+    background-color: #c8d6c8;
+    color: rgb(22, 21, 21);
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+}
+button:hover {
+    background-color: #a8b6a8; /* 鼠标悬停时的背景色，可按需修改 */
+}
+
+

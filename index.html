@@ -255,6 +255,37 @@
 
             </div>
 
+            <div class="left">
+                <div class="shuru">
+                    <p>外径(mm): <input type="text" id="gb_3091_waijing" value=""></p> 
+                    <p>壁厚(mm): <input type="text" id="gb_3091_bihou" value=""></p>
+                    <P>选择钢级: <select name="type" id="usertype3091">
+                        <option value="235" selected>Q235B</option>
+                        <option value="355" >Q355B</option>
+                        
+                        
+                    </select>
+                    </P>  
+                </div>
+                <div class="annue">
+                    <button onclick="GBT_3091()">计算GB/T3091-2025水压值</button>
+                    <button onclick="qingchu3091()">清空数据</button>
+                    
+                </div>
+
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="ss_gbt3091"></span></p>
+
+                </div>
+                <div class="note">
+                    <P class="blink-text">外径不大于219.1mm的保压时间至少5秒;外径大于219.1mm的保压时间至少10秒</P>
+
+                </div>
+            
+
+
+            </div>
+
 
 
         </div>

@@ -274,7 +274,38 @@ window.onload = function() {
     setInterval(function() { showTime(clock); }, 1000); // 使用匿名函数避免eval
 };
 
+function GBT_3091() {
+    var waijing=document.getElementById('gb_3091_waijing').value
+    console.log(waijing)
+    var bihou=document.getElementById('gb_3091_bihou').value
+    console.log(bihou)
+    var mytype=document.getElementById('usertype3091');
+    var index = mytype.selectedIndex;
+    var s=2*Number(mytype.options[index].value)*Number(bihou)/Number(waijing)*0.6
+    console.log(s)
+    s2=Math.ceil(s*10)/10
+    console.log(s2)
+    if (Number(waijing)<=219.1){
+        if (s2<5){document.getElementById("ss_gbt3091").innerHTML='外径是'+waijing+'mm,'+'壁厚是'+bihou+'mm,'+'水压是'+ s2+'MPa,'+'保压时长至少5秒';}
+        else {document.getElementById("ss_gbt3091").innerHTML='外径是'+waijing+'mm,'+'壁厚是'+bihou+'mm,'+'水压是'+5.0+'MPa,'+'保压时长至少5秒';}
 
+
+    }else {
+        if (Number(waijing)>219.1){
+            if (s2<5){document.getElementById("ss_gbt3091").innerHTML='外径是'+waijing+'mm,'+'壁厚是'+bihou+','+'水压是'+s2+'MPa,'+'保压时长至少10秒';}
+            else {document.getElementById("ss_gbt3091").innerHTML='外径是'+waijing+','+'壁厚是'+bihou+'mm,'+'水压是'+5.0+'MPa,'+'保压时长至少10秒'}
+
+        }else{document.getElementById("ss_gbt3091").innerHTML="错误"}
+    }
+      
+};
+
+function qingchu3091() {
+    document.getElementById("ss_gbt3091").innerHTML="";
+    document.getElementById('gb_3091_waijing').value="";
+    document.getElementById('gb_3091_bihou').value="";
+    
+}
 
 
 

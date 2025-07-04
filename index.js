@@ -309,13 +309,61 @@ function qingchu3091() {
 
 
 
+// 计算伸长率弧型试样的
+function shenchanglv_huxing() {
+    var width=Number(document.getElementById('width_huxing').value);
+    var thickness_huxing=Number(document.getElementById('thickness_huxing').value);
+    var waijing_huxing=Number(document.getElementById('waijing_huxing').value);
+    var usertype_huxing=document.getElementById('usertype_huxing');
+    var index_1=usertype_huxing.selectedIndex;
+    var op_11=Number(usertype_huxing.options[index_1].value) ;
+
+    mianji=thickness_huxing*width*(1+(width**2)/(6*waijing_huxing*(waijing_huxing-2*thickness_huxing)))
+    console.log(mianji)
+    shenchanglv_value=1940*((mianji)**0.2)/((op_11)**0.9)
+    document.getElementById("shenchanglv_huxing").innerHTML=""
+
+    document.getElementById("shenchanglv_huxing").innerHTML="宽度是"+width+";公称壁厚"+thickness_huxing+";最小抗拉强度是"+op_11+"MPa;计算后的最小断后伸长率是"+shenchanglv_value.toFixed(1)+"%"
+
+}
+
+
+function qingchu_huxing() {
+    document.getElementById("width_huxing").innerHTML="";
+    document.getElementById('thickness_huxing').value="";
+    document.getElementById('waijing_huxing').value="";
+    document.getElementById('width_huxing').value="";
+    
+}
+
+
+// 计算伸长率全截面试样的
+function shenchanglv_quanjiemian() {
+    // var width=Number(document.getElementById('width_quanjiemian').value);
+    var thickness_quanjiemian=Number(document.getElementById('thickness_quanjiemian').value);
+    var waijing_quanjiemian=Number(document.getElementById('waijing_quanjiemian').value);
+    var usertype_quanjiemian=document.getElementById('usertype_quanjiemian');
+    var index_1=usertype_quanjiemian.selectedIndex;
+    var op_11=Number(usertype_huxing.options[index_1].value) ;
+
+    mianji=3.14*thickness_quanjiemian*(waijing_quanjiemian-thickness_quanjiemian)
+    console.log(mianji)
+
+    shenchanglv_value=1940*((mianji)**0.2)/((op_11)**0.9)
+    document.getElementById("shenchanglv_quanjiemian").innerHTML=""
+
+    document.getElementById("shenchanglv_quanjiemian").innerHTML="外径是"+waijing_quanjiemian+";公称壁厚"+thickness_quanjiemian+";最小抗拉强度是"+op_11+"MPa;计算后的最小断后伸长率是"+shenchanglv_value.toFixed(1)+"%"
+
+}
 
 
 
-
-
-
-
+function qingchu_quanjiemian() {
+   document.getElementById("shenchanglv_quanjiemian").innerHTML="";
+    document.getElementById('waijing_quanjiemian').value="";
+    document.getElementById('thickness_quanjiemian').value="";
+    
+}
 
 
 

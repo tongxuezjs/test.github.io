@@ -194,35 +194,36 @@
 
              
             </div>
-            <!-- 伸长率 -->
+             <!-- 3091水压 -->
             <div class="left">
-
                 <div class="shuru">
-                    <p>API 5L 46TH/GB/T9711-2023 断后伸长率最低要求计算</p>
-                    <p>试样宽度(mm): <input type="text" id="width" value="" placeholder="20/38.1等"></p> 
-                    <p>公称壁厚(mm): <input type="text" id="thickness1" value="" placeholder="输入壁厚"></p>
-                    <P>最小抗拉强度(MPa)选择钢级: <select name="type" id="usertype1">
-                    <option value="415" >L245/B(M)</option>
-                    <option value="415" selected>L290/X42(M)</option>
-                    <option value="435">L320/X46(M)</option>
-                    <option value="460">L360/X52(M)</option>
-                    <option value="490">L390/X56(M)</option>
-                    <option value="520">L415/X60(M)</option>
-                    <option value="535">L450/X65(M)</option>
-                    <option value="570">L485/X70(M)</option>
+                    <p>外径(mm): <input type="text" id="gb_3091_waijing" value=""></p> 
+                    <p>壁厚(mm): <input type="text" id="gb_3091_bihou" value=""></p>
+                    <P>选择钢级: <select name="type" id="usertype3091">
+                        <option value="235" selected>Q235B</option>
+                        <option value="355" >Q355B</option>
+                        
+                        
                     </select>
-                    </p>
-
+                    </P>  
                 </div>
-
                 <div class="annue">
-                    <button onclick="shenchanglv()">计算最小断后伸长率</button>
-                    <button onclick="qingchu4()">清空数据</button> 
+                    <button onclick="GBT_3091()">计算GB/T3091-2025水压值</button>
+                    <button onclick="qingchu3091()">清空数据</button>
+                    
                 </div>
+
                 <div class="jielun">
-                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="shenchanglv1"></span></p>
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="ss_gbt3091"></span></p>
+
                 </div>
-              
+                <div class="note">
+                    <P class="blink-text">外径不大于219.1mm的保压时间至少5秒;外径大于219.1mm的保压时间至少10秒</P>
+
+                </div>
+            
+
+
             </div>
             
             <div class="left ">
@@ -255,36 +256,115 @@
 
             </div>
 
-            <div class="left">
-                <div class="shuru">
-                    <p>外径(mm): <input type="text" id="gb_3091_waijing" value=""></p> 
-                    <p>壁厚(mm): <input type="text" id="gb_3091_bihou" value=""></p>
-                    <P>选择钢级: <select name="type" id="usertype3091">
-                        <option value="235" selected>Q235B</option>
-                        <option value="355" >Q355B</option>
-                        
-                        
-                    </select>
-                    </P>  
-                </div>
-                <div class="annue">
-                    <button onclick="GBT_3091()">计算GB/T3091-2025水压值</button>
-                    <button onclick="qingchu3091()">清空数据</button>
-                    
-                </div>
-
-                <div class="jielun">
-                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="ss_gbt3091"></span></p>
-
-                </div>
-                <div class="note">
-                    <P class="blink-text">外径不大于219.1mm的保压时间至少5秒;外径大于219.1mm的保压时间至少10秒</P>
-
-                </div>
             
 
+<!-- 伸长率计算 -->
+ <!-- 伸长率 -->
+            
+            <div class="left">
 
+                <div class="shuru">
+                    <p>API 5L 46TH/GB/T9711-2023 断后伸长率最低要求计算</p>
+                    <p>仅限板状试样</p>
+                    <p>试样宽度(mm): <input type="text" id="width" value="" placeholder="20/25/38.1等"></p> 
+                    <p>公称壁厚(mm): <input type="text" id="thickness1" value="" placeholder="输入壁厚"></p>
+                    <P>最小抗拉强度(MPa)选择钢级: <select name="type" id="usertype1">
+                    <option value="415" selected>L245/B(M)</option>
+                    <option value="415" >L290/X42(M)</option>
+                    <option value="435">L320/X46(M)</option>
+                    <option value="460">L360/X52(M)</option>
+                    <option value="490">L390/X56(M)</option>
+                    <option value="520">L415/X60(M)</option>
+                    <option value="535">L450/X65(M)</option>
+                    <option value="570">L485/X70(M)</option>
+                    </select>
+                    </p>
+
+                </div>
+
+                <div class="annue">
+                    <button onclick="shenchanglv()">计算最小断后伸长率</button>
+                    <button onclick="qingchu4()">清空数据</button> 
+                </div>
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="shenchanglv1"></span></p>
+                </div>
+              
             </div>
+
+            <!-- 神长率 -弧形试样 -->
+             <div class="left">
+                <div class="shuru">
+                    <p>API 5L 46TH/GB/T9711-2023 断后伸长率最低要求计算</p>
+                    <p>仅限弧形试样</p>
+                    <p>试样宽度(mm): <input type="text" id="width_huxing" value="" placeholder="12.5/19/20/25/38.1等"></p> 
+                    <p>公称壁厚(mm): <input type="text" id="thickness_huxing" value="" placeholder="输入公称壁厚"></p>
+                    <p>公称外径(mm): <input type="text" id="waijing_huxing" value="" placeholder="输入公称外径"></p>
+                    <P>最小抗拉强度(MPa)选择钢级: <select name="type" id="usertype_huxing">
+                    <option value="415" selected>L245/B(M)</option>
+                    <option value="415" >L290/X42(M)</option>
+                    <option value="435">L320/X46(M)</option>
+                    <option value="460">L360/X52(M)</option>
+                    <option value="490">L390/X56(M)</option>
+                    <option value="520">L415/X60(M)</option>
+                    <option value="535">L450/X65(M)</option>
+                    <option value="570">L485/X70(M)</option>
+                    </select>
+                    </p>
+
+                </div>
+                <div class="annue">
+                    <button onclick="shenchanglv_huxing()">计算最小断后伸长率</button>
+                    <button onclick="qingchu_huxing()">清空数据</button> 
+                </div>
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="shenchanglv_huxing"></span></p>
+                </div>
+
+             </div>
+
+
+
+            <!-- 伸长率 -全截面试样 -->
+             <div class="left">
+                <div class="shuru">
+                    <p>API 5L 46TH/GB/T9711-2023 断后伸长率最低要求计算</p>
+                    <p>仅限全截面试样</p>
+                    <p>公称外径(mm): <input type="text" id="waijing_quanjiemian" value="" placeholder="输入公称外径"></p>
+                    <p>公称壁厚(mm): <input type="text" id="thickness_quanjiemian" value="" placeholder="输入壁厚"></p>
+                    <P>最小抗拉强度(MPa)选择钢级: <select name="type" id="usertype_quanjiemian">
+                    <option value="415" selected>L245/B(M)</option>
+                    <option value="415" >L290/X42(M)</option>
+                    <option value="435">L320/X46(M)</option>
+                    <option value="460">L360/X52(M)</option>
+                    <option value="490">L390/X56(M)</option>
+                    <option value="520">L415/X60(M)</option>
+                    <option value="535">L450/X65(M)</option>
+                    <option value="570">L485/X70(M)</option>
+                    </select>
+                    </p>
+
+                </div>
+                <div class="annue">
+                    <button onclick="shenchanglv_quanjiemian()">计算最小断后伸长率</button>
+                    <button onclick="qingchu_quanjiemian()">清空数据</button> 
+                </div>
+                <div class="jielun">
+                    <p> 计算结果是:&nbsp;&nbsp;&nbsp;&nbsp;<span id="shenchanglv_quanjiemian"></span></p>
+                </div>
+
+             </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
